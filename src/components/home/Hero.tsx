@@ -2,56 +2,49 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-navy-900">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(15,52,96,0.4)_0%,_transparent_60%)]" />
-
-      {/* Subtle grid pattern */}
+    <section className="relative flex min-h-screen items-center overflow-hidden pt-16">
+      {/* Background image */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
       />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-[#1A1A1A]/60" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-32 lg:px-8">
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-navy-300">
-            Columbia University
-          </p>
-          <h1
-            className="font-extrabold leading-[1.08] tracking-tight text-white"
-            style={{ fontSize: "var(--text-display)" }}
-          >
-            Columbia&apos;s Premier
+          <h1 className="leading-[1.08] tracking-tight text-white" style={{ fontSize: "var(--text-display)" }}>
+            <span className="font-extrabold">Columbia&apos;s home for</span>
             <br />
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-              Startup Accelerator
-            </span>
+            <span className="font-serif italic font-bold">ambitious founders</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
-            We help student founders build, launch, and scale — with zero equity
-            and zero fees. Over 100 startups have graduated and collectively
-            raised $150M+.
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/80">
+            Almaworks takes no equity and helps early-stage startups run by
+            Columbia-affiliated student entrepreneurs achieve significant,
+            sustainable growth.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/apply"
-              className="rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-navy-900 shadow-lg transition-all hover:bg-white/90 hover:shadow-xl"
+              href="/get-involved"
+              className="rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-[#1A1A1A] transition-all hover:bg-white/90 hover:shadow-lg"
             >
-              Apply Now
+              Get Involved
             </Link>
             <Link
               href="/about"
-              className="rounded-full border border-white/20 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
+              className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:border-white/60 hover:bg-white/10"
             >
               Learn More
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg className="h-6 w-6 text-white/50" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+        </svg>
       </div>
     </section>
   );
