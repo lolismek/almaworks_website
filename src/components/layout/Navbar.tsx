@@ -25,13 +25,13 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span
-            className={`text-xl font-extrabold tracking-tight transition-colors duration-300 ${
-              scrolled ? "text-navy-800" : "text-white"
+          <img
+            src="/images/logo-white.png"
+            alt="Almaworks"
+            className={`h-8 w-auto transition-all duration-300 ${
+              scrolled ? "brightness-0" : ""
             }`}
-          >
-            ALMAWORKS
-          </span>
+          />
         </Link>
 
         {/* Desktop links */}
